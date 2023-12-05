@@ -5,8 +5,8 @@
 def canUnlockAll(boxes):
     """a method that determines if all the boxes can be opened"""
 
-    # if not boxes or len(boxes) == 1:
-    #     return True
+    if not isinstance(boxes, list) or any(not isinstance(box, list) for box in boxes):
+        return False
 
     keys = set(boxes[0])
     for idx in range(1, len(boxes)):
