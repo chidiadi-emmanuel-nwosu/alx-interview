@@ -5,7 +5,7 @@ provides a function for rotating a 2D matrix.
 """
 
 
-def rotate_2d_matrix(matrix: list[list[int]]) -> None:
+def rotate_2d_matrix(matrix):
     """
     Rotates a given 2D matrix in-place.
 
