@@ -19,10 +19,20 @@ def island_perimeter(grid):
     The perimeter is then computed based on the number of land cells adjacent
     to water (cells with value 0).
     """
-    count = 0
-    for row in grid:
-        for cell in row:
-            if cell == 1:
-                count += 1
+    perimeter = 0
 
-    return count * 2 + 2
+    # Define directions to explore neighbors: up, down, left, right
+    directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
+    for i in range(len(grid)):
+        for j in range(len(grid[0])):
+            if grid[i][j] == 1:
+                for dx, dy in directions:
+                    x, y = i + dx, j + dy
+                    if (
+                        x < 0 or x >= len(grid) or y < 0
+                        or y >= len(grid[0]) or grid[x][y] == 0
+                    ):
+                        perimeter += 1
+
+    return perimeter
