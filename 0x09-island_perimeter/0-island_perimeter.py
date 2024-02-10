@@ -13,20 +13,13 @@ def island_perimeter(grid):
 
     Returns:
         int: The perimeter of the island.
-
-    The function calculates the perimeter of the island by traversing
-    through the grid and counting the number of land cells(cells with value 1).
-    The perimeter is then computed based on the number of land cells adjacent
-    to water (cells with value 0).
     """
     perimeter = 0
 
-    # Define directions to explore neighbors: up, down, left, right
     directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-
-    for i in range(len(grid)):
-        for j in range(len(grid[0])):
-            if grid[i][j] == 1:
+    for i, row in enumerate(grid):
+        for j, cell in enumerate(row):
+            if cell == 1:
                 for dx, dy in directions:
                     x, y = i + dx, j + dy
                     if (
