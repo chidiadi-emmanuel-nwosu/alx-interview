@@ -5,7 +5,7 @@
 
 
 def island_perimeter(grid):
-    """ Calculate the perimeter of an island represented by a grid.
+    """Calculate the perimeter of an island represented by a grid.
 
     Args:
         grid (list of list of int): A 2D grid representing the island
@@ -22,10 +22,9 @@ def island_perimeter(grid):
             if cell == 1:
                 for dx, dy in directions:
                     x, y = i + dx, j + dy
-                    if (
-                        x < 0 or x >= len(grid) or y < 0
-                        or y >= len(grid[0]) or grid[x][y] == 0
-                    ):
+                    if (x < 0 or x >= len(grid) or
+                            y < 0 or y >= len(row) or
+                            grid[x][y] == 0):
                         perimeter += 1
 
     return perimeter
